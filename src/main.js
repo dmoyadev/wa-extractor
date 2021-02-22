@@ -1,4 +1,12 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
 
-createApp(App).mount('#app')
+import App from './App.vue';
+import router from './router';
+
+Vue.config.productionTip = false;
+
+// eslint-disable-next-line vue/require-name-property
+new Vue({
+	router,
+	...App
+}).$mount('#app');
