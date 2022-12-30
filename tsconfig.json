@@ -1,42 +1,48 @@
 {
 	"compilerOptions": {
 		"target": "esnext",
-		"module": "es2022",
+		"module": "esnext",
+		"useDefineForClassFields": true,
+		"moduleResolution": "node",
 		"strict": true,
 		"jsx": "preserve",
-		"importHelpers": true,
-		"moduleResolution": "node",
-		"skipLibCheck": true,
-		"esModuleInterop": true,
-		"noImplicitAny": false,
-		"allowJs": true,
-		"allowSyntheticDefaultImports": true,
 		"sourceMap": true,
 		"resolveJsonModule": true,
-		"baseUrl": ".",
+		"esModuleInterop": true,
+		"lib": [
+			"ESNext",
+			"DOM"
+		],
+		"skipLibCheck": true,
 		"types": [
 			"vite/client",
 			"node",
-			"jest"
+			"cypress"
 		],
+		"importHelpers": true,
+		"noImplicitAny": false,
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
 		"paths": {
 			"@/*": [
 				"src/*"
 			]
 		},
-		"lib": [
-			"ESNext",
-			"DOM"
-		]
+
 	},
+
 	"include": [
 		"src/**/*.ts",
 		"src/**/*.tsx",
 		"src/**/*.vue",
 		"tests/**/*.ts",
-		"tests/**/*.tsx",
+		"tests/**/*.tsx"
 	],
+
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		"dist",
+		"tests/e2e"
 	]
 }
